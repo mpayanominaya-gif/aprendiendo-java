@@ -65,6 +65,6 @@ sc.close();
         }while (opcion != 4);
     }public static void finalizarSesion(){
         System.out.println("SESION CULMINADA❌");
-        System.out.println("CAMBIO 2");
+        System.out.println("CAMBIO 3");
     }
 }
