@@ -12,13 +12,21 @@ public class LoginBa3 {
         String generoPersona="Masculino";
         boolean accesoPermitido=false;
         do {
+            boolean pinEscritoCorectamente =false;
             System.out.println("INGRESA TU NOMBRE:");
             String nombre = sc.nextLine();
-
-            System.out.println("INGRESA TU PIN");
-            int pin = sc.nextInt();
-            sc.nextLine();
-
+            int pin=0;
+            while (!pinEscritoCorectamente)
+            try {
+                System.out.println("INGRESA TU PIN:");
+                pin = sc.nextInt();
+                sc.nextLine();
+                pinEscritoCorectamente=true;
+                System.out.println("DIGITASTE UN NUMERO✅");
+            }catch (InputMismatchException e){
+                System.out.println("NO DIGITO NUMERO");
+                sc.nextLine();
+            }
             for (int i = 0; i < nombres.length; i++){
                 if (nombres[i].equals(nombre)&& pins[i]==pin) {
                     accesoPermitido = true;
@@ -66,6 +74,6 @@ sc.close();
         }while (opcion != 4);
     }public static void finalizarSesion(){
         System.out.println("SESION CULMINADA❌");
-        System.out.println("CAMBIO 3");
+        System.out.println("CAMBIO 4");
     }
 }
